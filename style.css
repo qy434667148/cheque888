@@ -1,0 +1,111 @@
+/* Basic reset and layout */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Creepster', Arial, sans-serif;
+    overflow: hidden;
+    background-color: #0d0d0d;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Title Styling */
+.title {
+    font-size: 5vw;
+    font-weight: bold;
+    color: #e63946;
+    text-shadow: 3px 3px 10px #6a040f, -3px -3px 10px #6a040f;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* Image Styling */
+#alienImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    opacity: 0.85;
+    transition: transform 0.2s ease;
+    z-index: 1;
+}
+
+#alienImage.scare {
+    transform: translate(-50%, -50%) scale(1.1); /* Smooth scale effect */
+}
+
+/* Heart Styling */
+#heart {
+    position: absolute;
+    top: 55%; /* Adjust as needed to align with the mouth */
+    left: 50%;
+    width: 200px; /* Increased size to make it 5 times larger */
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 3;
+}
+
+#heart.visible {
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    display: block;
+}
+
+/* Counter Styling */
+#counter {
+    font-size: 8vw;
+    font-weight: bold;
+    color: #f77f00;
+    text-shadow: 2px 2px 0 #e63946, -2px -2px 0 #e63946;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    z-index: 2;
+}
+
+/* MEOW Text Styling */
+#miao {
+    font-size: 0.6em;
+    margin-left: 0.3em;
+    color: #ff006e;
+    opacity: 1;
+    transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.miao-scare {
+    transform: scale(1.4) rotate(-10deg);
+    opacity: 0.8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 7vw;
+    }
+
+    #counter {
+        font-size: 12vw;
+    }
+}
